@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    active: dev
+    include: mybatis, mail, redis
+
+### 测试用
+test:
+  user:
+    username: zhangsan
+    age: 18
+    toString: the age of ${test.user.username} is ${test.user.age}
