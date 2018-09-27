@@ -43,16 +43,20 @@
 					<groupId>org.springframework.boot</groupId>
 					<artifactId>spring-boot-starter-logging</artifactId>
 				</exclusion>
-				<!-- 发布项目所需配置 -->
-				<!-- 排除掉SpringBoot中的自带Tomcat容器依赖 -->
-				<!-- <exclusion> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-tomcat</artifactId> 
-					</exclusion> -->
+				<!-- 打包时会自动去除SpringBoot中的自带Tomcat容器依赖 -->
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-tomcat</artifactId>
+				</exclusion>
 			</exclusions>
 		</dependency>
 
-		<!-- 发布项目所需配置 -->
-		<!-- <dependency> <groupId>javax</groupId> <artifactId>javaee-api</artifactId> 
-			<version>8.0</version> <scope>provided</scope> </dependency> -->
+		<!-- 打包/第三方Tomcat启动所需 -->
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+			<scope>provided</scope>
+		</dependency>
 
 		<!-- SpringBoot Test -->
 		<dependency>
